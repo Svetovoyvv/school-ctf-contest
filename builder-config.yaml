@@ -51,3 +51,11 @@ tasks:
       - "./large_docx/give/challenge.docx"
     difficulty: 150
     comment: ""
+
+  - name: image-history
+    flag: ctf{ex1f_tells_h1story}
+    build: "./image_history/compose.yml"
+    give:
+      - "./image_history/give/history.jpg"
+    difficulty: 200
+    comment: ""

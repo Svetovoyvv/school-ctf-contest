@@ -9,3 +9,4 @@
 | who | [task.md](who/task.md) | [confidential.zip](who/give/confidential.zip) | [writeup.md](who/writeup.md) | ctf{WHO_AM_I_im_zip_arch1ve_lol} | 150 |  |
 | net-base64 | [task.md](net_base64/task.md) | [PasswordChecker.exe](net_base64/give/PasswordChecker.exe) | [writeup.md](net_base64/writeup.md) | ctf{base64_n0t_secur3} | 200 |  |
 | large-docx | [task.md](large_docx/task.md) | [challenge.docx](large_docx/give/challenge.docx) | [writeup.md](large_docx/writeup.md) | ctf{d0cx_is_just_z1p} | 150 |  |
+| image-history | [task.md](image_history/task.md) | [history.jpg](image_history/give/history.jpg) | [writeup.md](image_history/writeup.md) | ctf{ex1f_tells_h1story} | 200 |  |
