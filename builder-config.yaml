@@ -59,3 +59,11 @@ tasks:
       - "./image_history/give/history.jpg"
     difficulty: 200
     comment: ""
+  - name: zero-one
+    flag: ctf{M0RS3_C0D3}
+    build: "./zero_one/compose.yml"
+    give:
+      - "./zero_one/give/flag.mp3"
+    difficulty: 200
+    comment: ""
+  

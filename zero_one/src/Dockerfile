@@ -2,6 +2,7 @@ FROM python:3.12-alpine
 
 WORKDIR /app
 
-COPY app.py .
+RUN apk add ffmpeg && pip install pydub
 
-CMD ["python", "app.py"]
+COPY app/ .
+ENTRYPOINT ["python", "app.py"]
