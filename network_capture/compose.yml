@@ -1,0 +1,12 @@
+services:
+  app:
+    build: ./src
+    environment:
+      FLAG: "${FLAG:-ctf{DUMMY_FLAG}}"
+    volumes:
+      - ./give:/app/output
+    cap_add:
+      - NET_ADMIN
+      - NET_RAW
+    privileged: true
+
