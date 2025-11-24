@@ -3,18 +3,13 @@ using System.Text;
 
 class Program
 {
-    // Храним флаг как массив байт UTF-8.
-    // Суффикс "u8" заставляет компилятор сохранить строку как последовательность байт (ASCII/UTF-8) в бинарном файле.
-    // Это позволяет найти её через grep или strings.
-    private static readonly byte[] StoredFlagBytes = "Password is {{BASE64_PASSWORD}}"u8.ToArray();
-
     static void Main(string[] args)
     {
-        // Восстанавливаем строку для проверки логики
-        string storedFlag = Encoding.UTF8.GetString(StoredFlagBytes);
+        // Флаг встроен напрямую в код - будет виден в dnSpy
+        string storedFlag = "Password is {{BASE64_PASSWORD}}";
 
         Console.WriteLine("Введите пароль:");
-        string? input = Console.ReadLine();
+        string input = Console.ReadLine();
 
         if (string.IsNullOrEmpty(input))
         {

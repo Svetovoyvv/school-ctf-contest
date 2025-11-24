@@ -67,7 +67,7 @@ tasks:
     difficulty: 200
     comment: ""
 
-  - name: network-capture
+  - name: shark
     flag: ctf{n3tw0rk_tr4ff1c_t3lls_4ll}
     build: "./network_capture/compose.yml"
     give:
