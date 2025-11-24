@@ -23,7 +23,7 @@ def create_challenge():
         f.write(flag)
     
     # Create zip file with compression
-    zip_filename = 'confidential'
+    zip_filename = 'confidential.zip'
     with zipfile.ZipFile(zip_filename, 'w', compression=zipfile.ZIP_DEFLATED) as zipf:
         zipf.write('flag.txt')
     

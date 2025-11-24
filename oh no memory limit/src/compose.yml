@@ -1,8 +1,0 @@
-services:
-  app:
-    build: .
-    environment:
-      - FLAG=ctf{this_is_a_test_flag}
-    volumes:
-      - ./output:/app/output
-    command: secret.png

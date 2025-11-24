@@ -1,8 +1,0 @@
-services:
-  app:
-    build: .
-    environment:
-      - FLAG=ctf{hahahha_baseANYTHING_makes_brrrr}
-    volumes:
-      - ./output:/app/output
-    

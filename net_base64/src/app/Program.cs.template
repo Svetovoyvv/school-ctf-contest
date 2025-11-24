@@ -1,0 +1,55 @@
+using System;
+using System.Text;
+
+class Program
+{
+    // Храним флаг как массив байт UTF-8.
+    // Суффикс "u8" заставляет компилятор сохранить строку как последовательность байт (ASCII/UTF-8) в бинарном файле.
+    // Это позволяет найти её через grep или strings.
+    private static readonly byte[] StoredFlagBytes = "Password is {{BASE64_PASSWORD}}"u8.ToArray();
+
+    static void Main(string[] args)
+    {
+        // Восстанавливаем строку для проверки логики
+        string storedFlag = Encoding.UTF8.GetString(StoredFlagBytes);
+
+        Console.WriteLine("Введите пароль:");
+        string? input = Console.ReadLine();
+
+        if (string.IsNullOrEmpty(input))
+        {
+            Console.WriteLine("Пароль не может быть пустым.");
+            return;
+        }
+
+        // Кодируем введённую строку в base64
+        string base64Input = EncodeToBase64(input);
+        
+        // Формируем строку в формате "Flag is {base64}"
+        string inputFlag = "Password is " + base64Input;
+
+        // Сравниваем
+        if (inputFlag == storedFlag)
+        {
+            Console.WriteLine("Пароль верный!");
+        }
+        else
+        {
+            Console.WriteLine("Пароль неверный!");
+        }
+    }
+
+    static string EncodeToBase64(string text)
+    {
+        try
+        {
+            byte[] bytes = Encoding.UTF8.GetBytes(text);
+            return Convert.ToBase64String(bytes);
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine($"Ошибка кодирования: {ex.Message}");
+            return string.Empty;
+        }
+    }
+}
