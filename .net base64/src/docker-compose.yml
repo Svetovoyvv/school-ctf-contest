@@ -1,0 +1,8 @@
+services:
+  builder:
+    build: .
+    environment:
+      - PASSWORD=ctf{base64_n0t_secur3}
+    volumes:
+      - ./output:/app-output
+

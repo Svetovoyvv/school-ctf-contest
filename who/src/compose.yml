@@ -1,0 +1,7 @@
+services:
+  app:
+    build: .
+    volumes:
+      - ./output:/app/output
+    environment:
+      FLAG: ctf{WHO_AM_I_im_zip_arch1ve_lol}
