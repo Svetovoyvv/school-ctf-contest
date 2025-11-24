@@ -66,4 +66,12 @@ tasks:
       - "./zero_one/give/flag.mp3"
     difficulty: 200
     comment: ""
+
+  - name: network-capture
+    flag: ctf{n3tw0rk_tr4ff1c_t3lls_4ll}
+    build: "./network_capture/compose.yml"
+    give:
+      - "./network_capture/give/traffic.pcap"
+    difficulty: 250
+    comment: ""
   

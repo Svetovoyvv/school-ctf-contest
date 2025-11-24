@@ -90,7 +90,7 @@ def build_task(task: Task, temp_dir: Path) -> None:
     ).wait(30)
     assert result == 0, f"Failed to build task: {task.name}"
 
-    result = subprocess.Popen(
+    process = subprocess.Popen(
         [
             "docker-compose", 
             "-f", compose_file.name, 
@@ -105,7 +105,12 @@ def build_task(task: Task, temp_dir: Path) -> None:
         },
         stdout=subprocess.PIPE,
         stderr=subprocess.PIPE,
-    ).wait(30)
+    )
+    try:
+        process.wait(120)
+    except subprocess.TimeoutExpired:
+        print(process.stdout.read().decode("utf-8"))
+        raise
     assert result == 0, f"Failed to run task: {task.name}"
     task_description = compose_file.parent / "task.md"
     assert task_description.exists(), f"Task description not found: {task_description}"
