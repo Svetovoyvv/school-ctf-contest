@@ -9,27 +9,45 @@ tasks:
     build: ./click/compose.yml
     give:
       - ./click/give/index.html
+    difficulty: 100
+    comment: ""
 
   - name: its-a-base
     flag: ctf{hahahha_baseANYTHING_makes_brrrr}
     build: "./its_a_base/compose.yml"
     give:
       - "./its_a_base/give/message.txt"
+    difficulty: 150
+    comment: ""
 
   - name: oh-no-memory-limit
     flag: ctf{png_size_little_wrong}
     build: "./oh_no_memory_limit/compose.yml"
     give:
       - "./oh_no_memory_limit/give/secret.png.clip.png"
+    difficulty: 200
+    comment: ""
 
   - name: who
     flag: ctf{WHO_AM_I_im_zip_arch1ve_lol}
     build: ./who/compose.yml
     give:
       - ./who/give/confidential.zip
+    difficulty: 150
+    comment: ""
 
   - name: net-base64
     flag: ctf{base64_n0t_secur3}
     build: "./net_base64/compose.yml"
     give:
       - "./net_base64/give/PasswordChecker.exe"
+    difficulty: 200
+    comment: ""
+
+  - name: large-docx
+    flag: ctf{d0cx_is_just_z1p}
+    build: "./large_docx/compose.yml"
+    give:
+      - "./large_docx/give/challenge.docx"
+    difficulty: 150
+    comment: ""

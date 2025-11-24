@@ -38,9 +38,9 @@ def url(path: Path) -> str:
 template_text = r"""
 Список заданий для CTF:
 
-| Название | Описание | Данные файлы | Решение | Флаг |
-| -------- | -------- | -------- | -------- | -------- |
-{% for task in tasks %}| {{ task.name }} | {{ (task.build.parent / "task.md") | url }} | {% for i in task.give %}{{ i | url }}{% if not loop.last %}, {% endif %}{% endfor %} | {{ (task.build.parent / "writeup.md") | url }} | {{ task.flag }} |
+| Название | Описание | Данные файлы | Решение | Флаг | Сложность (баллы) | Комментарий автора |
+| -------- | -------- | -------- | -------- | -------- | ----------------- | ------------------ |
+{% for task in tasks %}| {{ task.name }} | {{ (task.build.parent / "task.md") | url }} | {% for i in task.give %}{{ i | url }}{% if not loop.last %}, {% endif %}{% endfor %} | {{ (task.build.parent / "writeup.md") | url }} | {{ task.flag }} | {{ task.difficulty }} | {{ task.comment }} |
 {% endfor %}
 """
 
@@ -50,6 +50,8 @@ class Task(BaseModel):
     flag: str
     build: Path
     give: list[Path]
+    difficulty: int
+    comment: str
 
 class Config(BaseModel):
     participant_data: Path
